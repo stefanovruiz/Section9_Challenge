@@ -7,6 +7,8 @@ using namespace std;
 void print_numbers();
 void add_numbers();
 void mean_numbers();
+void largest_number();
+void smallest_number();
 
 vector <int> numbers_list {};
 int main() {
@@ -18,7 +20,9 @@ int main() {
         cout << "P\t- Print numbers stored in list." << endl;
         cout << "A\t- Add numbers to the list." << endl;
         cout << "M\t- Calculate the mean of the list." << endl;
-        cout << "Q\t- Quit" << endl;
+        cout << "S\t- Display the smallest number on the list." << endl;
+        cout << "L\t- Display the largest number on the list." << endl;
+        cout << "Q\t- Quit" << endl << endl;
         cout << "Please enter your selection: ";
         char user_select{};
         cin >> user_select;
@@ -37,6 +41,13 @@ int main() {
             case 'm':
                 mean_numbers();
                 break;
+            case 'S':
+            case 's':
+                cout << "Display smallest number." << endl; // Console out test. TO-DO: Replace with proper function.
+                break;
+            case 'L':
+            case 'l':
+                cout << "Display largest number." << endl; // Console out test. TO-DO: Replace with proper funciton.
             case 'Q':
             case 'q':
                 cout << "Thank you!";
@@ -54,7 +65,7 @@ int main() {
 void print_numbers()
 {
     if(numbers_list.empty()) {
-        cout << "Numbers list is empty." << endl;
+        cout << "Numbers list is empty." << endl << endl;
     }
     else {
         cout << "The set contains " << "[ ";
@@ -107,4 +118,14 @@ void mean_numbers()
     double sum_of_numbers_list{};
     sum_of_numbers_list = accumulate(numbers_list.begin(), numbers_list.end(), 0.0);
     cout << "Mean of the list is " << (sum_of_numbers_list / numbers_list.size()) << endl << endl;
+}
+
+void smallest_number()
+{
+
+}
+
+void largest_number()
+{
+
 }
