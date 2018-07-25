@@ -43,11 +43,14 @@ int main() {
                 break;
             case 'S':
             case 's':
-                cout << "Display smallest number." << endl; // Console out test. TO-DO: Replace with proper function.
+                smallest_number();
+
                 break;
             case 'L':
             case 'l':
                 cout << "Display largest number." << endl; // Console out test. TO-DO: Replace with proper funciton.
+                largest_number();
+                break;
             case 'Q':
             case 'q':
                 cout << "Thank you!";
@@ -122,10 +125,28 @@ void mean_numbers()
 
 void smallest_number()
 {
+    int initial_vector_value {numbers_list[0]};
 
+    //for(int i=0;i < numbers_list.size();i++)
+    for(auto smallest_number_in_vector : numbers_list)
+    {
+
+        if(smallest_number_in_vector < initial_vector_value)
+        {
+            if(smallest_number_in_vector < initial_vector_value)
+                initial_vector_value = smallest_number_in_vector;
+
+        }
+
+    }
+    cout << initial_vector_value << endl;
 }
 
 void largest_number()
 {
-
+    for(int i{0}; i < numbers_list.size(); i++)
+    {
+        cout << "Test case for Display largest value in numbers: " << numbers_list[i];
+        //
+    }
 }
