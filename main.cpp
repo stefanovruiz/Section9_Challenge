@@ -185,7 +185,7 @@ void smallest_number()
 
 void largest_number()
 {
-    int intial_vector_value{numbers_list[vector_zero_value]};
+    int intial_vector_value{numbers_list[vector_zero_value]}; // Same documentation as smallest_number(). Nothing much has really changed. Some inversing on the if statements but that's it.
     for(auto largest_number_in_vector : numbers_list)
     {
         if(largest_number_in_vector > intial_vector_value)
