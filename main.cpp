@@ -1,3 +1,22 @@
+/*
+ * Author; Stefano Ruiz
+ * Date: July 23, 2018
+ * Updated: July 25, 2018
+ *
+ * This program is based on the section 9 challenge on Tim's C++ Beginner series.
+ * Does not contain any form of exception handling.
+ * Do not use this program without citing it, or without giving credit to the users who created it.
+ *
+ *
+ *
+ *
+ * Recent Updates:
+ * Jul 25: Added functions and function definitions. Check out the history on Github for any changes made.
+ */
+
+
+
+
 #include <iostream>
 #include <vector>
 #include <numeric>
@@ -5,10 +24,33 @@
 using namespace std;
 
 void print_numbers();
+/*
+ * Prints numbers in vector or tells user if vector is empty.
+ *
+ * */
 void add_numbers();
+/*
+ * Adds a user defined number to the numbers_list vector.
+ * It has no exception handling built in.
+ *
+ * */
 void mean_numbers();
+/*
+ * Calculates the mean (average) of the numbers inside the numbers_list vector.
+ *
+ * */
 void largest_number();
+/*
+ * Displays the largest number in the numbers_list vector. Uses a ranged-based for loop.
+ * For training purposes we are not using the built in "max" function.
+ * TO-DO: MUST WRITE FUNCTION.
+ * */
+
 void smallest_number();
+/*
+ * Displays the smallest number in the numbers_list vector. Uses a ranged-based for loop.
+ * For training purposes we are not using the built in "min" function.
+ * */
 
 vector <int> numbers_list {};
 int main() {
@@ -125,10 +167,12 @@ void mean_numbers()
 
 void smallest_number()
 {
+    // Important variable. It grabs the initial vector value at numbers_list[0] for the comparison in the for loop.
     int initial_vector_value {numbers_list[0]};
 
-    //for(int i=0;i < numbers_list.size();i++)
-    for(auto smallest_number_in_vector : numbers_list)
+
+
+    for(auto smallest_number_in_vector : numbers_list) // Used a ranged-based for loop instead of the regular to clean up the code a bit.
     {
 
         if(smallest_number_in_vector < initial_vector_value)
