@@ -53,6 +53,7 @@ void smallest_number();
  * */
 
 vector <int> numbers_list {};
+const int vector_zero_value{0};
 int main() {
 
     bool whileContinue {true};
@@ -90,7 +91,6 @@ int main() {
                 break;
             case 'L':
             case 'l':
-                cout << "Display largest number." << endl; // Console out test. TO-DO: Replace with proper funciton.
                 largest_number();
                 break;
             case 'Q':
@@ -104,7 +104,6 @@ int main() {
         }
     }
     return 0;
-
 }
 
 void print_numbers()
@@ -151,7 +150,6 @@ void add_numbers()
                 default:
                     cout << "Invalid entry. Try again." << endl;
                     isContinue_do = true;
-
             }
         } while(isContinue_do);
 
@@ -168,7 +166,7 @@ void mean_numbers()
 void smallest_number()
 {
     // Important variable. It grabs the initial vector value at numbers_list[0] for the comparison in the for loop.
-    int initial_vector_value {numbers_list[0]};
+    int initial_vector_value {numbers_list[vector_zero_value]};
 
 
 
@@ -177,20 +175,23 @@ void smallest_number()
 
         if(smallest_number_in_vector < initial_vector_value)
         {
-            if(smallest_number_in_vector < initial_vector_value)
                 initial_vector_value = smallest_number_in_vector;
 
         }
 
     }
-    cout << initial_vector_value << endl;
+    cout << "Smallest number is " << initial_vector_value << endl;
 }
 
 void largest_number()
 {
-    for(int i{0}; i < numbers_list.size(); i++)
+    int intial_vector_value{numbers_list[vector_zero_value]};
+    for(auto largest_number_in_vector : numbers_list)
     {
-        cout << "Test case for Display largest value in numbers: " << numbers_list[i];
-        //
+        if(largest_number_in_vector > intial_vector_value)
+        {
+            intial_vector_value = largest_number_in_vector;
+        }
     }
+    cout << "Largest number is " << intial_vector_value << endl;
 }
